@@ -1,0 +1,45 @@
+<html>  
+<head>
+			<title>Square Finder App by Mohan </title>
+			<style>
+						* { font-size:50px;font-family:Cambria Math; }
+						body {background-color:DeepSkyBlue;}
+						h1 { background-color:blue; color:white; width:500px; border-radius:10px}
+						
+			</style>
+</head>
+<body>
+<center>
+			<h1> <b>Square Finder App <b></h1>
+			<form onsubmit="square()">
+			<input type="number"step="any" placeholder="Enter number" id="num"></input>
+			<br/><br/>
+			<input type="submit" value="Find Square"/>
+			</form>
+			<h2 id="msg"></h2>
+			
+			<script>
+					function square()
+					{
+					event.preventDefault();
+					let num = document.getElementById("num");
+					let msg = document.getElementById("msg");
+					
+					if(num.value=="")
+					{
+							alert("u did not enter number");
+							msg.innerHTML="";
+							num.focus();
+							return;
+					}
+					
+					let n = parseFloat(num.value);
+					let r = n * n;
+					let ans = " Square = " +r.toFixed(2);
+					msg.innerHTML=ans;
+					}
+
+			</script>
+</center>
+</body>
+</html>
